@@ -80,5 +80,5 @@ pedroz.github.io/
 ---
 
 <p align="center">
-  <sub>Feito com 💙 e dados — UniCEUB, 2025</sub>
+  <sub>Feito com 💙 e dados — UniCEUB, 2026</sub>
 </p>
