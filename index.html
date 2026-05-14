@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedro Zampier | Cientista de Dados</title>
+    <meta name="description" content="Portfólio de Pedro Lima Zampier de Andrade — Cientista de Dados em formação, especialista em Python, Pandas e Data Storytelling.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #0a0e1a;
+            --bg-card: rgba(15, 23, 42, 0.7);
+            --bg-card-hover: rgba(20, 30, 55, 0.85);
+            --cyan: #22d3ee;
+            --cyan-dim: rgba(34, 211, 238, 0.15);
+            --cyan-glow: rgba(34, 211, 238, 0.35);
+            --emerald: #34d399;
+            --emerald-dim: rgba(52, 211, 153, 0.15);
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --border-subtle: rgba(148, 163, 184, 0.08);
+            --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+        *, *::before, *::after { box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+        body {
+            font-family: var(--font-sans);
+            background: var(--bg-deep);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        /* === AMBIENT GLOW === */
+        .glow { position: fixed; border-radius: 50%; filter: blur(140px); opacity: .12; pointer-events: none; z-index: 0; }
+        .glow-1 { width: 600px; height: 600px; top: -10%; left: -10%; background: var(--cyan); }
+        .glow-2 { width: 500px; height: 500px; bottom: 5%; right: -8%; background: var(--emerald); }
+
+        /* === NAVBAR === */
+        .navbar {
+            background: rgba(10, 14, 26, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: .9rem 0;
+            z-index: 1030;
+        }
+        .navbar-brand { font-weight: 800; font-size: 1.4rem; color: var(--text-primary) !important; letter-spacing: -.5px; }
+        .navbar-brand span { color: var(--cyan); }
+        .nav-link { color: var(--text-secondary) !important; font-weight: 500; font-size: .95rem; transition: color .25s; position: relative; }
+        .nav-link:hover, .nav-link.active { color: var(--cyan) !important; }
+        .navbar-toggler { border: none; }
+        .navbar-toggler:focus { box-shadow: none; }
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(241,245,249,.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        /* === HERO === */
+        #hero { min-height: 100vh; display: flex; align-items: center; padding-top: 90px; position: relative; z-index: 1; }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: .5rem;
+            padding: .45rem 1.1rem; border-radius: 999px;
+            background: var(--cyan-dim); color: var(--cyan);
+            font-family: var(--font-mono); font-size: .8rem; font-weight: 500;
+            border: 1px solid rgba(34, 211, 238, .2);
+            margin-bottom: 1.5rem;
+        }
+        .hero-badge .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--cyan); animation: pulse-dot 2s infinite; }
+        @keyframes pulse-dot { 0%,100%{ opacity: 1; } 50%{ opacity: .3; } }
+        .hero-name {
+            font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 800; line-height: 1.08;
+            margin-bottom: 1.2rem; letter-spacing: -1.5px;
+            background: linear-gradient(135deg, #fff 30%, var(--cyan) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .hero-subtitle { font-size: 1.15rem; color: var(--text-secondary); margin-bottom: .6rem; max-width: 650px; }
+        .hero-subtitle .hl { color: var(--cyan); font-weight: 600; }
+        .hero-tagline { font-size: 1rem; color: var(--text-secondary); margin-bottom: 2.5rem; opacity: .7; font-style: italic; }
+        .btn-hero {
+            padding: .75rem 1.8rem; border-radius: 10px; font-weight: 600; font-size: .95rem;
+            display: inline-flex; align-items: center; gap: .5rem;
+            text-decoration: none; transition: all .3s;
+        }
+        .btn-primary-custom { background: var(--cyan); color: var(--bg-deep); border: none; box-shadow: 0 4px 20px var(--cyan-glow); }
+        .btn-primary-custom:hover { transform: translateY(-3px); box-shadow: 0 8px 30px var(--cyan-glow); color: var(--bg-deep); }
+        .btn-outline-custom { background: transparent; color: var(--text-primary); border: 1px solid rgba(255,255,255,.15); }
+        .btn-outline-custom:hover { border-color: var(--cyan); color: var(--cyan); transform: translateY(-3px); }
+
+        /* === SECTIONS GLOBAL === */
+        section { padding: 6rem 0; position: relative; z-index: 1; }
+        .section-label {
+            font-family: var(--font-mono); font-size: .8rem; color: var(--cyan);
+            text-transform: uppercase; letter-spacing: 3px; margin-bottom: .5rem;
+        }
+        .section-heading { font-size: 2.2rem; font-weight: 800; letter-spacing: -.5px; margin-bottom: 1rem; }
+        .section-desc { color: var(--text-secondary); max-width: 600px; margin-bottom: 3rem; }
+        .divider { width: 50px; height: 3px; background: var(--cyan); border-radius: 2px; margin-bottom: 2rem; }
+
+        /* === GLASS CARD === */
+        .glass {
+            background: var(--bg-card); border: 1px solid var(--border-subtle);
+            border-radius: 16px; padding: 2rem; transition: all .35s ease;
+            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+        }
+        .glass:hover { background: var(--bg-card-hover); border-color: rgba(34,211,238,.2); transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,.3); }
+
+        /* === SOBRE === */
+        .about-highlight {
+            font-size: 1.2rem; color: var(--text-primary); font-weight: 500;
+            border-left: 3px solid var(--cyan); padding-left: 1.2rem;
+            margin-bottom: 1.5rem; line-height: 1.8;
+        }
+        .about-body { color: var(--text-secondary); font-size: 1.05rem; line-height: 1.9; }
+        .about-body strong { color: var(--text-primary); }
+        .stat-box { text-align: center; }
+        .stat-value { font-size: 2rem; font-weight: 800; color: var(--cyan); }
+        .stat-label { font-size: .85rem; color: var(--text-secondary); }
+
+        /* === SKILLS === */
+        .skill-card-icon { font-size: 2rem; margin-bottom: 1.2rem; }
+        .skill-card-icon.tech { color: var(--cyan); }
+        .skill-card-icon.soft { color: var(--emerald); }
+        .skill-card h4 { font-size: 1.2rem; margin-bottom: 1.2rem; }
+        .tag {
+            display: inline-block; padding: .45rem 1rem; border-radius: 999px;
+            font-size: .85rem; font-weight: 600; margin: .3rem .25rem;
+            transition: all .25s;
+        }
+        .tag-cyan { background: var(--cyan-dim); color: var(--cyan); border: 1px solid rgba(34,211,238,.2); }
+        .tag-cyan:hover { background: var(--cyan); color: var(--bg-deep); }
+        .tag-emerald { background: var(--emerald-dim); color: var(--emerald); border: 1px solid rgba(52,211,153,.2); }
+        .tag-emerald:hover { background: var(--emerald); color: var(--bg-deep); }
+
+        /* === PROJETOS === */
+        .project-card { display: flex; flex-direction: column; height: 100%; }
+        .project-number {
+            font-family: var(--font-mono); font-size: .8rem; color: var(--cyan);
+            margin-bottom: .8rem; opacity: .6;
+        }
+        .project-card h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: .8rem; }
+        .project-card .desc { color: var(--text-secondary); font-size: .95rem; line-height: 1.7; margin-bottom: 1.2rem; flex-grow: 1; }
+        .project-card .tech-used { margin-bottom: 1.5rem; }
+        .project-card .tech-used span {
+            font-family: var(--font-mono); font-size: .75rem; color: var(--text-secondary);
+            background: rgba(148,163,184,.08); padding: .3rem .7rem; border-radius: 6px;
+            margin-right: .4rem; display: inline-block; margin-bottom: .4rem;
+        }
+        .btn-project {
+            display: inline-flex; align-items: center; gap: .5rem;
+            color: var(--cyan); font-weight: 600; font-size: .9rem;
+            text-decoration: none; transition: all .25s; padding: .6rem 0;
+            border-top: 1px solid var(--border-subtle); margin-top: auto;
+        }
+        .btn-project:hover { color: #fff; gap: .8rem; }
+
+        /* === DEPOIMENTO === */
+        .testimonial-section {
+            background: linear-gradient(135deg, rgba(34,211,238,.03), rgba(52,211,153,.03));
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        .quote-mark { font-size: 5rem; line-height: 1; color: rgba(34,211,238,.15); font-family: Georgia, serif; }
+        .testimonial-text { font-size: 1.2rem; font-style: italic; line-height: 1.9; color: var(--text-primary); font-weight: 300; }
+        .testimonial-author { margin-top: 1.5rem; }
+        .testimonial-author h5 { color: var(--cyan); font-size: 1rem; margin: 0; }
+        .testimonial-author small { color: var(--text-secondary); }
+
+        /* === CONTATO / FOOTER === */
+        footer { padding: 5rem 0 2rem; text-align: center; position: relative; z-index: 1; }
+        .footer-heading { font-size: 2rem; font-weight: 800; margin-bottom: .5rem; }
+        .footer-sub { color: var(--text-secondary); margin-bottom: 2.5rem; }
+        .social-row { display: flex; justify-content: center; gap: 1rem; margin-bottom: 3rem; flex-wrap: wrap; }
+        .social-btn {
+            width: 52px; height: 52px; border-radius: 50%;
+            background: var(--bg-card); border: 1px solid var(--border-subtle);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--text-primary); font-size: 1.3rem;
+            text-decoration: none; transition: all .3s;
+        }
+        .social-btn:hover { background: var(--cyan); color: var(--bg-deep); transform: translateY(-4px); box-shadow: 0 8px 20px var(--cyan-glow); border-color: var(--cyan); }
+        .footer-copy { color: var(--text-secondary); font-size: .85rem; border-top: 1px solid var(--border-subtle); padding-top: 2rem; }
+
+        /* === RESPONSIVE === */
+        @media(max-width:991px) {
+            section { padding: 4.5rem 0; }
+            .navbar { background: rgba(10,14,26,.96); }
+        }
+        @media(max-width:768px) {
+            .hero-name { letter-spacing: -1px; }
+            .glass { padding: 1.5rem; }
+            .glow { display: none; }
+        }
+
+        /* === TYPING ANIMATION === */
+        .typing-wrapper { display: inline; }
+        .typing-cursor { display: inline-block; width: 2px; height: 1.1em; background: var(--cyan); margin-left: 2px; animation: blink-cursor .7s step-end infinite; vertical-align: text-bottom; }
+        @keyframes blink-cursor { 50% { opacity: 0; } }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#mainNavbar" data-bs-offset="100">
+
+    <!-- Ambient Glow -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
+        <div class="container">
+            <a class="navbar-brand" href="#">Pedro <span>Zampier</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto gap-lg-3">
+                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projetos">Projetos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#depoimentos">Depoimentos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10">
+                    <div class="hero-badge"><span class="dot"></span> Disponível para oportunidades</div>
+                    <h1 class="hero-name">Pedro Lima Zampier<br>de Andrade</h1>
+                    <p class="hero-subtitle">
+                        <span class="typing-wrapper" id="typed-output"></span><span class="typing-cursor"></span>
+                    </p>
+                    <p class="hero-tagline">Transformando dados brutos em decisões estratégicas.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="https://github.com/OPedroZampier" target="_blank" class="btn-hero btn-primary-custom">
+                            <i class="fa-brands fa-github"></i> GitHub
+                        </a>
+                        <a href="https://br.linkedin.com/in/pedro-lima-zampier-de-andrade-a8a6513b4" target="_blank" class="btn-hero btn-outline-custom">
+                            <i class="fa-brands fa-linkedin-in"></i> LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE MIM -->
+    <section id="sobre">
+        <div class="container">
+            <p class="section-label">// sobre mim</p>
+            <h2 class="section-heading">Quem sou eu</h2>
+            <div class="divider"></div>
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-8">
+                    <div class="glass">
+                        <p class="about-highlight">
+                            "Acredito que os dados mais valiosos do mundo não servem para nada se a mensagem não for compreendida."
+                        </p>
+                        <p class="about-body">
+                            Sou um <strong>Cientista de Dados em formação no UniCEUB</strong>. Meu maior diferencial é a combinação de um perfil analítico com excelência em comunicação — competência que me rendeu <strong>destaque absoluto em oratória</strong> no Colégio do Sol.
+                        </p>
+                        <p class="about-body">
+                            Atuo como a ponte entre os números e os negócios, traduzindo métricas técnicas em narrativas claras (<strong>Data Storytelling</strong>). Possuo fluência nativa em português e <strong>certificação C2 Proficient em Inglês</strong> (EF SET 85/100).
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="row g-3">
+                        <div class="col-6"><div class="glass stat-box"><div class="stat-value">C2</div><div class="stat-label">Inglês Proficient</div></div></div>
+                        <div class="col-6"><div class="glass stat-box"><div class="stat-value">85</div><div class="stat-label">EF SET Score</div></div></div>
+                        <div class="col-6"><div class="glass stat-box"><div class="stat-value"><i class="fa-solid fa-microphone-lines"></i></div><div class="stat-label">Oratória</div></div></div>
+                        <div class="col-6"><div class="glass stat-box"><div class="stat-value"><i class="fa-solid fa-chart-line"></i></div><div class="stat-label">Storytelling</div></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+        <div class="container">
+            <p class="section-label">// habilidades</p>
+            <h2 class="section-heading">Skills & Ferramentas</h2>
+            <div class="divider"></div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="glass skill-card h-100">
+                        <div class="skill-card-icon tech"><i class="fa-solid fa-laptop-code"></i></div>
+                        <h4>Hard Skills</h4>
+                        <div>
+                            <span class="tag tag-cyan">Python</span>
+                            <span class="tag tag-cyan">Pandas</span>
+                            <span class="tag tag-cyan">Matemática</span>
+                            <span class="tag tag-cyan">Estatística Aplicada</span>
+                            <span class="tag tag-cyan">Lógica de Programação</span>
+                            <span class="tag tag-cyan">ETL</span>
+                            <span class="tag tag-cyan">EDA</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="glass skill-card h-100">
+                        <div class="skill-card-icon soft"><i class="fa-solid fa-brain"></i></div>
+                        <h4>Soft Skills</h4>
+                        <div>
+                            <span class="tag tag-emerald">Comunicação</span>
+                            <span class="tag tag-emerald">Oratória</span>
+                            <span class="tag tag-emerald">Data Storytelling</span>
+                            <span class="tag tag-emerald">Fast Learner</span>
+                            <span class="tag tag-emerald">Proatividade</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJETOS -->
+    <section id="projetos">
+        <div class="container">
+            <p class="section-label">// projetos</p>
+            <h2 class="section-heading">Projetos em Destaque</h2>
+            <div class="divider"></div>
+            <div class="row g-4">
+                <!-- Projeto 1 -->
+                <div class="col-lg-6 d-flex">
+                    <div class="glass project-card w-100">
+                        <span class="project-number">01</span>
+                        <h3>Análise Exploratória de Dados: Emendas e Transparência Pública</h3>
+                        <p class="desc">
+                            Projeto prático de EDA focado em emendas públicas. Limpeza e estruturação de bases governamentais complexas para extração de insights reais e busca por padrões e anomalias. Aplicação de raciocínio analítico, tratamento de dados e comunicação de resultados através de storytelling.
+                        </p>
+                        <div class="tech-used">
+                            <span>Python</span>
+                            <span>Análise Exploratória</span>
+                            <span>Raciocínio Analítico</span>
+                            <span>Data Storytelling</span>
+                        </div>
+                        <a href="https://github.com/OPedroZampier/entrega-1-intro-Ciencia_de_dados" target="_blank" class="btn-project">
+                            Ver no GitHub <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Projeto 2 -->
+                <div class="col-lg-6 d-flex">
+                    <div class="glass project-card w-100">
+                        <span class="project-number">02</span>
+                        <h3>Limpeza, Transformação e Agrupamento de Dados</h3>
+                        <p class="desc">
+                            Pipeline completo de tratamento de dados (ETL básico) em 16 etapas usando dataset <code style="color:var(--emerald);background:var(--emerald-dim);padding:2px 6px;border-radius:4px;font-size:.85rem;">.parquet</code>. Envolve filtragem geo-financeira, deduplicação, imputação de dados, engenharia de features e persistência em JSON.
+                        </p>
+                        <div class="tech-used">
+                            <span>Python</span>
+                            <span>Pandas</span>
+                            <span>PyArrow</span>
+                            <span>FastParquet</span>
+                        </div>
+                        <a href="https://github.com/OPedroZampier/pandas_intro_ex2.ipynb" target="_blank" class="btn-project">
+                            Ver no GitHub <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DEPOIMENTO -->
+    <section id="depoimentos" class="testimonial-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <p class="section-label">// recomendação</p>
+                    <div class="quote-mark">&ldquo;</div>
+                    <p class="testimonial-text">
+                        Apesar de o Pedro estar no primeiro semestre, vejo um grande potencial e uma proatividade que o coloca acima da média. Ele demonstra uma base sólida e uma capacidade impressionante de aplicar o conhecimento em projetos reais.
+                    </p>
+                    <div class="testimonial-author">
+                        <h5>Caio Thomas</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTATO / FOOTER -->
+    <footer id="contato">
+        <div class="container">
+            <p class="section-label">// contato</p>
+            <h2 class="footer-heading">Vamos trabalhar juntos?</h2>
+            <p class="footer-sub">Aberto a oportunidades, estágios e projetos colaborativos.</p>
+            <div class="social-row">
+                <a href="mailto:pedroperry0@gmail.com" class="social-btn" title="E-mail"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://br.linkedin.com/in/pedro-lima-zampier-de-andrade-a8a6513b4" target="_blank" class="social-btn" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://github.com/OPedroZampier" target="_blank" class="social-btn" title="GitHub"><i class="fa-brands fa-github"></i></a>
+            </div>
+            <p class="footer-copy">&copy; 2025 Pedro Lima Zampier de Andrade &middot; Feito com <i class="fa-solid fa-heart" style="color:var(--cyan);"></i> e dados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Fecha menu mobile ao clicar
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                const nav = document.getElementById('navMenu');
+                if (nav.classList.contains('show')) bootstrap.Collapse.getInstance(nav)?.hide();
+            });
+        });
+
+        // Typing animation
+        const phrases = [
+            'Cientista de Dados',
+            'Python & Pandas',
+            'Especialista em Data Storytelling'
+        ];
+        const el = document.getElementById('typed-output');
+        let phraseIdx = 0, charIdx = 0, deleting = false;
+        function typeLoop() {
+            const current = phrases[phraseIdx];
+            if (!deleting) {
+                el.textContent = current.substring(0, charIdx + 1);
+                charIdx++;
+                if (charIdx === current.length) { deleting = true; setTimeout(typeLoop, 2000); return; }
+                setTimeout(typeLoop, 70);
+            } else {
+                el.textContent = current.substring(0, charIdx - 1);
+                charIdx--;
+                if (charIdx === 0) { deleting = false; phraseIdx = (phraseIdx + 1) % phrases.length; setTimeout(typeLoop, 400); return; }
+                setTimeout(typeLoop, 35);
+            }
+        }
+        typeLoop();
+    </script>
+</body>
+</html>
