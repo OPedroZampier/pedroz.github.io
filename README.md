@@ -62,8 +62,17 @@ Através deste portfólio, você terá acesso aos meus repositórios de dados re
 
 ```
 pedroz.github.io/
-├── index.html    # Arquivo único com HTML + CSS + JS
-└── README.md     # Este arquivo
+├── index.html                                          # Site do portfólio (HTML + CSS + JS)
+├── README.md                                           # Este arquivo
+├── certificados/
+│   ├── Alura-Python-Fun-EST-EXC.mhtml                  # 🏅 Certificado Alura — Python: Funções, Estruturas e Exceções
+│   ├── Alura-Python-dados.mhtml                        # 🏅 Certificado Alura — Python para Dados
+│   ├── Alura-matematica.mhtml                          # 🏅 Certificado Alura — Matemática
+│   └── EF SET Certificate.pdf                          # 🏅 Certificação EF SET — Inglês C2 (85/100)
+├── curriculo/
+│   └── curriculo.md                                    # 📄 Currículo profissional completo
+└── Slide/
+    └── Do Dado Bruto à Decisão Estratégica.pptx        # 🎤 Apresentação/Slide do Bootcamp
 ```
 
 ---
