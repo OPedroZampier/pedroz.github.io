@@ -156,6 +156,54 @@
         }
         .btn-project:hover { color: #fff; gap: .8rem; }
 
+        /* === CERTIFICAÇÕES === */
+        .cert-card {
+            display: flex; flex-direction: column; height: 100%; position: relative; overflow: hidden;
+        }
+        .cert-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, var(--cyan), var(--emerald)); border-radius: 16px 16px 0 0;
+            opacity: 0; transition: opacity .35s;
+        }
+        .cert-card:hover::before { opacity: 1; }
+        .cert-provider {
+            display: inline-flex; align-items: center; gap: .5rem;
+            font-family: var(--font-mono); font-size: .75rem; text-transform: uppercase;
+            letter-spacing: 2px; margin-bottom: 1rem;
+        }
+        .cert-provider-dot {
+            width: 8px; height: 8px; border-radius: 50%; display: inline-block;
+        }
+        .cert-provider-dot.alura { background: #0056D2; }
+        .cert-provider-dot.efset { background: #00C9A7; }
+        .cert-card h4 {
+            font-size: 1.1rem; font-weight: 700; margin-bottom: .6rem; line-height: 1.5;
+        }
+        .cert-card .cert-desc {
+            color: var(--text-secondary); font-size: .9rem; line-height: 1.7; margin-bottom: 1rem; flex-grow: 1;
+        }
+        .cert-tags { margin-bottom: 1.2rem; }
+        .cert-tags span {
+            font-family: var(--font-mono); font-size: .72rem; color: var(--text-secondary);
+            background: rgba(148,163,184,.08); padding: .25rem .6rem; border-radius: 6px;
+            margin-right: .35rem; display: inline-block; margin-bottom: .35rem;
+        }
+        .btn-cert {
+            display: inline-flex; align-items: center; gap: .5rem;
+            color: var(--cyan); font-weight: 600; font-size: .85rem;
+            text-decoration: none; transition: all .25s; padding: .5rem 0;
+            border-top: 1px solid var(--border-subtle); margin-top: auto;
+        }
+        .btn-cert:hover { color: #fff; gap: .8rem; }
+        .cert-score {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 48px; height: 48px; border-radius: 12px;
+            background: linear-gradient(135deg, var(--cyan-dim), rgba(52,211,153,.1));
+            border: 1px solid rgba(34,211,238,.15);
+            font-weight: 800; font-size: 1.1rem; color: var(--cyan);
+            margin-bottom: 1rem;
+        }
+
         /* === DEPOIMENTO === */
         .testimonial-section {
             background: linear-gradient(135deg, rgba(34,211,238,.03), rgba(52,211,153,.03));
@@ -218,6 +266,7 @@
                     <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
                     <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
                     <li class="nav-item"><a class="nav-link" href="#projetos">Projetos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#certificacoes">Certificações</a></li>
                     <li class="nav-item"><a class="nav-link" href="#depoimentos">Depoimentos</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
                 </ul>
@@ -362,6 +411,127 @@
                         </div>
                         <a href="https://github.com/OPedroZampier/pandas_intro_ex2.ipynb" target="_blank" class="btn-project">
                             Ver no GitHub <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CERTIFICAÇÕES -->
+    <section id="certificacoes">
+        <div class="container">
+            <p class="section-label">// certificações</p>
+            <h2 class="section-heading">Certificados & Qualificações</h2>
+            <div class="divider"></div>
+            <div class="row g-4">
+                <!-- Cert 1 - EF SET -->
+                <div class="col-lg-4 col-md-6 d-flex">
+                    <div class="glass cert-card w-100">
+                        <div class="cert-score">85</div>
+                        <div class="cert-provider">
+                            <span class="cert-provider-dot efset"></span>
+                            <span style="color:var(--emerald);">EF SET</span>
+                        </div>
+                        <h4>English C2 Proficient</h4>
+                        <p class="cert-desc">
+                            Certificação internacional de proficiência em inglês nível C2 (Proficient), o nível mais alto na escala CEFR. Score: <strong style="color:var(--cyan);">85/100</strong>.
+                        </p>
+                        <div class="cert-tags">
+                            <span>English</span>
+                            <span>C2 Proficient</span>
+                            <span>CEFR</span>
+                        </div>
+                        <a href="https://cert.efset.org/iBvCmQ" target="_blank" class="btn-cert">
+                            Ver Certificado <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Cert 2 - Alura Python Dados -->
+                <div class="col-lg-4 col-md-6 d-flex">
+                    <div class="glass cert-card w-100">
+                        <div class="cert-score"><i class="fa-brands fa-python" style="font-size:.9em;"></i></div>
+                        <div class="cert-provider">
+                            <span class="cert-provider-dot alura"></span>
+                            <span style="color:#4ca6ff;">Alura</span>
+                        </div>
+                        <h4>Python para Dados: Primeiros Passos</h4>
+                        <p class="cert-desc">
+                            Fundamentos de Python aplicados à Ciência de Dados — tipos de dados, estruturas básicas e introdução à manipulação de dados.
+                        </p>
+                        <div class="cert-tags">
+                            <span>Python</span>
+                            <span>Data Science</span>
+                            <span>Fundamentos</span>
+                        </div>
+                        <a href="https://cursos.alura.com.br/certificate/pedroperry0/python-data-science-primeiros-passos" target="_blank" class="btn-cert">
+                            Ver Certificado <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Cert 3 - Alura Python Funções -->
+                <div class="col-lg-4 col-md-6 d-flex">
+                    <div class="glass cert-card w-100">
+                        <div class="cert-score"><i class="fa-solid fa-code" style="font-size:.85em;"></i></div>
+                        <div class="cert-provider">
+                            <span class="cert-provider-dot alura"></span>
+                            <span style="color:#4ca6ff;">Alura</span>
+                        </div>
+                        <h4>Python para Dados: Funções, Estruturas de Dados e Exceções</h4>
+                        <p class="cert-desc">
+                            Aprofundamento em Python com funções avançadas, estruturas de dados complexas e tratamento de exceções aplicados à análise de dados.
+                        </p>
+                        <div class="cert-tags">
+                            <span>Python</span>
+                            <span>Funções</span>
+                            <span>Estruturas de Dados</span>
+                        </div>
+                        <a href="https://cursos.alura.com.br/certificate/912dacf7-3162-4a37-b86d-384dac134e72?lang=pt_BR" target="_blank" class="btn-cert">
+                            Ver Certificado <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Cert 4 - Alura Matemática -->
+                <div class="col-lg-4 col-md-6 d-flex">
+                    <div class="glass cert-card w-100">
+                        <div class="cert-score"><i class="fa-solid fa-square-root-variable" style="font-size:.85em;"></i></div>
+                        <div class="cert-provider">
+                            <span class="cert-provider-dot alura"></span>
+                            <span style="color:#4ca6ff;">Alura</span>
+                        </div>
+                        <h4>Matemática para Data Science: Construindo a Base</h4>
+                        <p class="cert-desc">
+                            Fundamentos matemáticos essenciais para Ciência de Dados — álgebra, estatística descritiva e conceitos analíticos aplicados.
+                        </p>
+                        <div class="cert-tags">
+                            <span>Matemática</span>
+                            <span>Estatística</span>
+                            <span>Data Science</span>
+                        </div>
+                        <a href="https://cursos.alura.com.br/certificate/pedroperry0/matematica-data-science-construindo-base" target="_blank" class="btn-cert">
+                            Ver Certificado <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Cert 5 - Alura Python Dados (2) -->
+                <div class="col-lg-4 col-md-6 d-flex">
+                    <div class="glass cert-card w-100">
+                        <div class="cert-score"><i class="fa-solid fa-database" style="font-size:.85em;"></i></div>
+                        <div class="cert-provider">
+                            <span class="cert-provider-dot alura"></span>
+                            <span style="color:#4ca6ff;">Alura</span>
+                        </div>
+                        <h4>Python para Dados: Primeiros Passos</h4>
+                        <p class="cert-desc">
+                            Reforço e aprofundamento dos fundamentos de Python para manipulação e análise de dados — consolidação de conceitos base.
+                        </p>
+                        <div class="cert-tags">
+                            <span>Python</span>
+                            <span>Dados</span>
+                            <span>Fundamentos</span>
+                        </div>
+                        <a href="https://cursos.alura.com.br/certificate/797104c6-eaa5-4c51-9d40-677b322b673b?lang" target="_blank" class="btn-cert">
+                            Ver Certificado <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </a>
                     </div>
                 </div>
