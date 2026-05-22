@@ -155,6 +155,16 @@
             border-top: 1px solid var(--border-subtle); margin-top: auto;
         }
         .btn-project:hover { color: #fff; gap: .8rem; }
+        .project-links {
+            display: flex; gap: 1.2rem;
+            border-top: 1px solid var(--border-subtle); margin-top: auto; padding-top: .8rem;
+        }
+        .btn-project-link {
+            display: inline-flex; align-items: center; gap: .4rem;
+            color: var(--cyan); font-weight: 600; font-size: .85rem;
+            text-decoration: none; transition: all .25s;
+        }
+        .btn-project-link:hover { color: #fff; transform: translateY(-1px); }
 
         /* === CERTIFICAÇÕES === */
         .cert-card {
@@ -263,12 +273,18 @@
             </button>
             <div class="collapse navbar-collapse" id="navMenu">
                 <ul class="navbar-nav ms-auto gap-lg-3">
-                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projetos">Projetos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#certificacoes">Certificações</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#depoimentos">Depoimentos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre" data-pt="Sobre" data-en="About">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills" data-pt="Skills" data-en="Skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projetos" data-pt="Projetos" data-en="Projects">Projetos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#certificacoes" data-pt="Certificações" data-en="Certifications">Certificações</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#depoimentos" data-pt="Depoimentos" data-en="Testimonials">Depoimentos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contato" data-pt="Contato" data-en="Contact">Contato</a></li>
+                    <!-- Language Toggle Button -->
+                    <li class="nav-item d-flex align-items-center ms-lg-3 mt-2 mt-lg-0">
+                        <button id="langToggleBtn" class="btn btn-outline-custom py-1 px-3 rounded-pill text-uppercase font-monospace" style="font-size: 0.85rem; border-color: rgba(34, 211, 238, 0.3); color: var(--cyan); background: transparent;">
+                            EN
+                        </button>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -279,12 +295,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-10">
-                    <div class="hero-badge"><span class="dot"></span> Disponível para oportunidades</div>
+                    <div class="hero-badge" data-pt="<span class='dot'></span> Disponível para oportunidades" data-en="<span class='dot'></span> Available for opportunities"><span class="dot"></span> Disponível para oportunidades</div>
                     <h1 class="hero-name">Pedro Lima Zampier<br>de Andrade</h1>
                     <p class="hero-subtitle">
                         <span class="typing-wrapper" id="typed-output"></span><span class="typing-cursor"></span>
                     </p>
-                    <p class="hero-tagline">Transformando dados brutos em decisões estratégicas.</p>
+                    <p class="hero-tagline" data-pt="Transformando dados brutos em decisões estratégicas." data-en="Transforming raw data into strategic decisions.">Transformando dados brutos em decisões estratégicas.</p>
                     <div class="d-flex flex-wrap gap-3">
                         <a href="https://github.com/OPedroZampier" target="_blank" class="btn-hero btn-primary-custom">
                             <i class="fa-brands fa-github"></i> GitHub
@@ -292,6 +308,26 @@
                         <a href="https://br.linkedin.com/in/pedro-lima-zampier-de-andrade-a8a6513b4" target="_blank" class="btn-hero btn-outline-custom">
                             <i class="fa-brands fa-linkedin-in"></i> LinkedIn
                         </a>
+                    </div>
+
+                    <!-- Spotlight Project Banner -->
+                    <div class="mt-4 p-3 rounded glass" style="border: 1px solid rgba(34, 211, 238, 0.2); background: rgba(34, 211, 238, 0.03); max-width: 580px; backdrop-filter: blur(10px);">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="spotlight-icon" style="font-size: 1.8rem; color: #a3e635;"><i class="fa-solid fa-star"></i></div>
+                            <div>
+                                <span style="font-size: 0.75rem; text-transform: uppercase; font-family: var(--font-mono); color: var(--cyan); display: block; font-weight: 700; letter-spacing: 1px;" data-pt="PROJETO EM DESTAQUE" data-en="FEATURED PROJECT">PROJETO EM DESTAQUE</span>
+                                <strong style="font-size: 0.95rem; display: block; margin-top: 2px; color: #fff;" data-pt="Análise Exploratória — Steam Games Dataset" data-en="Exploratory Data Analysis — Steam Games Dataset">Análise Exploratória — Steam Games Dataset</strong>
+                                <span style="font-size: 0.85rem; color: var(--text-secondary); display: block; margin-bottom: 8px;" data-pt="Meu melhor projeto de Ciência de Dados com slides interativos focados em insights de negócios." data-en="My top Data Science project with interactive slides focused on business insights.">Meu melhor projeto de Ciência de Dados com slides interativos focados em insights de negócios.</span>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <a href="./Slide/steam-eda.html" target="_blank" class="btn btn-sm btn-outline-custom rounded-pill" style="font-size: 0.8rem; font-weight: 600; padding: 0.25rem 1rem; border-color: #a3e635; color: #a3e635;">
+                                        <i class="fa-solid fa-play"></i> <span data-pt="Ver Apresentação (Slides)" data-en="View Presentation (Slides)">Ver Apresentação (Slides)</span>
+                                    </a>
+                                    <a href="https://github.com/OPedroZampier/Steam-Analysis" target="_blank" class="btn btn-sm btn-outline-custom rounded-pill" style="font-size: 0.8rem; font-weight: 600; padding: 0.25rem 1rem; border-color: var(--cyan); color: var(--cyan);">
+                                        <i class="fa-brands fa-github"></i> <span data-pt="Código no GitHub" data-en="GitHub Code">Código no GitHub</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -301,29 +337,29 @@
     <!-- SOBRE MIM -->
     <section id="sobre">
         <div class="container">
-            <p class="section-label">// sobre mim</p>
-            <h2 class="section-heading">Quem sou eu</h2>
+            <p class="section-label" data-pt="// sobre mim" data-en="// about me">// sobre mim</p>
+            <h2 class="section-heading" data-pt="Quem sou eu" data-en="About me">Quem sou eu</h2>
             <div class="divider"></div>
             <div class="row g-4 align-items-center">
                 <div class="col-lg-8">
                     <div class="glass">
-                        <p class="about-highlight">
+                        <p class="about-highlight" data-pt="&ldquo;Acredito que os dados mais valiosos do mundo não servem para nada se a mensagem não for compreendida.&rdquo;" data-en="&ldquo;I believe the most valuable data in the world is useless if the message is not understood.&rdquo;">
                             "Acredito que os dados mais valiosos do mundo não servem para nada se a mensagem não for compreendida."
                         </p>
-                        <p class="about-body">
+                        <p class="about-body" data-pt="Sou um <strong>Cientista de Dados em formação no UniCEUB</strong>. Meu maior diferencial é a combinação de um perfil analítico com excelência em comunicação &mdash; competência que me rendeu <strong>destaque absoluto em oratória</strong> no Colégio do Sol." data-en="I am a <strong>Data Scientist in training at UniCEUB</strong>. My biggest differentiator is the combination of an analytical profile with excellence in communication &mdash; a skill that earned me <strong>absolute distinction in public speaking</strong> at Colégio do Sol.">
                             Sou um <strong>Cientista de Dados em formação no UniCEUB</strong>. Meu maior diferencial é a combinação de um perfil analítico com excelência em comunicação — competência que me rendeu <strong>destaque absoluto em oratória</strong> no Colégio do Sol.
                         </p>
-                        <p class="about-body">
+                        <p class="about-body" data-pt="Atuo como a ponte entre os números e os negócios, traduzindo métricas técnicas em narrativas claras (<strong>Data Storytelling</strong>). Possuo fluência nativa em português e <strong>certificação C2 Proficient em Inglês</strong> (EF SET 85/100)." data-en="I act as the bridge between numbers and business, translating technical metrics into clear narratives (<strong>Data Storytelling</strong>). I have native fluency in Portuguese and <strong>C2 Proficient certification in English</strong> (EF SET 85/100).">
                             Atuo como a ponte entre os números e os negócios, traduzindo métricas técnicas em narrativas claras (<strong>Data Storytelling</strong>). Possuo fluência nativa em português e <strong>certificação C2 Proficient em Inglês</strong> (EF SET 85/100).
                         </p>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="row g-3">
-                        <div class="col-6"><div class="glass stat-box"><div class="stat-value">C2</div><div class="stat-label">Inglês Proficient</div></div></div>
-                        <div class="col-6"><div class="glass stat-box"><div class="stat-value">85</div><div class="stat-label">EF SET Score</div></div></div>
-                        <div class="col-6"><div class="glass stat-box"><div class="stat-value"><i class="fa-solid fa-microphone-lines"></i></div><div class="stat-label">Oratória</div></div></div>
-                        <div class="col-6"><div class="glass stat-box"><div class="stat-value"><i class="fa-solid fa-chart-line"></i></div><div class="stat-label">Storytelling</div></div></div>
+                        <div class="col-6"><div class="glass stat-box"><div class="stat-value">C2</div><div class="stat-label" data-pt="Inglês Proficient" data-en="English Proficient">Inglês Proficient</div></div></div>
+                        <div class="col-6"><div class="glass stat-box"><div class="stat-value">85</div><div class="stat-label" data-pt="EF SET Score" data-en="EF SET Score">EF SET Score</div></div></div>
+                        <div class="col-6"><div class="glass stat-box"><div class="stat-value"><i class="fa-solid fa-microphone-lines"></i></div><div class="stat-label" data-pt="Oratória" data-en="Oratory">Oratória</div></div></div>
+                        <div class="col-6"><div class="glass stat-box"><div class="stat-value"><i class="fa-solid fa-chart-line"></i></div><div class="stat-label" data-pt="Storytelling" data-en="Storytelling">Storytelling</div></div></div>
                     </div>
                 </div>
             </div>
@@ -333,20 +369,20 @@
     <!-- SKILLS -->
     <section id="skills">
         <div class="container">
-            <p class="section-label">// habilidades</p>
-            <h2 class="section-heading">Skills & Ferramentas</h2>
+            <p class="section-label" data-pt="// habilidades" data-en="// skills">// habilidades</p>
+            <h2 class="section-heading" data-pt="Skills & Ferramentas" data-en="Skills & Tools">Skills & Ferramentas</h2>
             <div class="divider"></div>
             <div class="row g-4">
                 <div class="col-md-6">
                     <div class="glass skill-card h-100">
                         <div class="skill-card-icon tech"><i class="fa-solid fa-laptop-code"></i></div>
-                        <h4>Hard Skills</h4>
+                        <h4 data-pt="Hard Skills" data-en="Hard Skills">Hard Skills</h4>
                         <div>
                             <span class="tag tag-cyan">Python</span>
                             <span class="tag tag-cyan">Pandas</span>
-                            <span class="tag tag-cyan">Matemática</span>
-                            <span class="tag tag-cyan">Estatística Aplicada</span>
-                            <span class="tag tag-cyan">Lógica de Programação</span>
+                            <span class="tag tag-cyan" data-pt="Matemática" data-en="Mathematics">Matemática</span>
+                            <span class="tag tag-cyan" data-pt="Estatística Aplicada" data-en="Applied Statistics">Estatística Aplicada</span>
+                            <span class="tag tag-cyan" data-pt="Lógica de Programação" data-en="Programming Logic">Lógica de Programação</span>
                             <span class="tag tag-cyan">ETL</span>
                             <span class="tag tag-cyan">EDA</span>
                         </div>
@@ -355,13 +391,13 @@
                 <div class="col-md-6">
                     <div class="glass skill-card h-100">
                         <div class="skill-card-icon soft"><i class="fa-solid fa-brain"></i></div>
-                        <h4>Soft Skills</h4>
+                        <h4 data-pt="Soft Skills" data-en="Soft Skills">Soft Skills</h4>
                         <div>
-                            <span class="tag tag-emerald">Comunicação</span>
-                            <span class="tag tag-emerald">Oratória</span>
+                            <span class="tag tag-emerald" data-pt="Comunicação" data-en="Communication">Comunicação</span>
+                            <span class="tag tag-emerald" data-pt="Oratória" data-en="Oratory">Oratória</span>
                             <span class="tag tag-emerald">Data Storytelling</span>
                             <span class="tag tag-emerald">Fast Learner</span>
-                            <span class="tag tag-emerald">Proatividade</span>
+                            <span class="tag tag-emerald" data-pt="Proatividade" data-en="Proactivity">Proatividade</span>
                         </div>
                     </div>
                 </div>
@@ -372,45 +408,80 @@
     <!-- PROJETOS -->
     <section id="projetos">
         <div class="container">
-            <p class="section-label">// projetos</p>
-            <h2 class="section-heading">Projetos em Destaque</h2>
+            <p class="section-label" data-pt="// projetos" data-en="// projects">// projetos</p>
+            <h2 class="section-heading" data-pt="Projetos" data-en="Projects">Projetos</h2>
             <div class="divider"></div>
             <div class="row g-4">
-                <!-- Projeto 1 -->
-                <div class="col-lg-6 d-flex">
-                    <div class="glass project-card w-100">
-                        <span class="project-number">01</span>
-                        <h3>Análise Exploratória de Dados: Emendas e Transparência Pública</h3>
-                        <p class="desc">
-                            Projeto prático de EDA focado em emendas públicas. Limpeza e estruturação de bases governamentais complexas para extração de insights reais e busca por padrões e anomalias. Aplicação de raciocínio analítico, tratamento de dados e comunicação de resultados através de storytelling.
-                        </p>
-                        <div class="tech-used">
-                            <span>Python</span>
-                            <span>Análise Exploratória</span>
-                            <span>Raciocínio Analítico</span>
-                            <span>Data Storytelling</span>
+                <!-- Projeto 1 (Destaque Principal) -->
+                <div class="col-12 mb-2">
+                    <div class="glass project-card w-100 p-4 p-md-5 position-relative overflow-hidden" style="border: 1px solid rgba(34, 211, 238, 0.25); background: linear-gradient(135deg, rgba(15, 23, 42, 0.75), rgba(20, 30, 55, 0.95));">
+                        <div class="position-absolute" style="top: -50px; right: -50px; width: 180px; height: 180px; background: rgba(34, 211, 238, 0.12); filter: blur(55px); border-radius: 50%;"></div>
+                        <div class="row align-items-center g-4">
+                            <div class="col-lg-8">
+                                <span class="project-number" style="font-size: 0.85rem; font-weight: 700; letter-spacing: 1.5px; opacity: 0.85;" data-pt="01 &middot; PROJETO PRINCIPAL" data-en="01 &middot; MAIN PROJECT">01 &middot; PROJETO PRINCIPAL</span>
+                                <h3 style="font-size: 1.6rem; font-weight: 800; margin-bottom: 0.8rem; color: #fff;" data-pt="Análise Exploratória: Steam Games Dataset" data-en="Exploratory Data Analysis: Steam Games Dataset">Análise Exploratória: Steam Games Dataset</h3>
+                                <p class="desc" style="font-size: 1rem; line-height: 1.75; color: var(--text-secondary); margin-bottom: 1.5rem;" data-pt="Investigação de padrões sobre preço, popularidade, avaliações, gêneros e qualidade de jogos na Steam. Meu trabalho principal em Ciência de Dados, demonstrando o uso avançado de Python e Pandas para organizar dados complexos, além de Seaborn e técnicas de Data Storytelling para direcionar decisões estratégicas de negócios." data-en="Investigation of patterns regarding price, popularity, reviews, genres, and quality of Steam games. My main Data Science work, showcasing advanced use of Python and Pandas to organize complex data, as well as Seaborn and Data Storytelling techniques to steer strategic business decisions.">
+                                    Investigação de padrões sobre preço, popularidade, avaliações, gêneros e qualidade de jogos na Steam. Meu trabalho principal em Ciência de Dados, demonstrando o uso avançado de Python e Pandas para organizar dados complexos, além de Seaborn e técnicas de Data Storytelling para direcionar decisões estratégicas de negócios.
+                                </p>
+                                <div class="tech-used mb-0">
+                                    <span style="font-size: 0.78rem; font-weight: 600;">Python</span>
+                                    <span style="font-size: 0.78rem; font-weight: 600;">Pandas</span>
+                                    <span style="font-size: 0.78rem; font-weight: 600;">Matplotlib</span>
+                                    <span style="font-size: 0.78rem; font-weight: 600;">Seaborn</span>
+                                    <span style="font-size: 0.78rem; font-weight: 600;">Data Storytelling</span>
+                                    <span style="font-size: 0.78rem; font-weight: 600;">EDA</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 text-center text-lg-start">
+                                <div class="p-4 rounded border-custom" style="background: rgba(34, 211, 238, 0.03); border: 1px solid rgba(34, 211, 238, 0.15);">
+                                    <h4 class="h6 text-uppercase tracking-wider mb-2 text-white" style="font-size: 0.75rem; letter-spacing: 1.5px; font-family: var(--font-mono);" data-pt="Ver Resultados" data-en="See Results">Ver Resultados</h4>
+                                    <p class="small text-secondary mb-4" data-pt="Acesse a apresentação completa de slides e analise as minhas conclusões e habilidades de comunicação logo de cara." data-en="Access the full slide presentation and analyze my conclusions and communication skills right away.">Acesse a apresentação completa de slides e analise as minhas conclusões e habilidades de comunicação logo de cara.</p>
+                                    <div class="d-grid gap-2">
+                                        <a href="./Slide/steam-eda.html" target="_blank" class="btn btn-primary-custom py-2 px-3 rounded text-uppercase font-monospace fw-bold" style="font-size: 0.82rem; background: var(--cyan); color: var(--bg-deep); border: none;">
+                                            <i class="fa-solid fa-display me-2"></i> <span data-pt="Ver Slides Interativos" data-en="View Interactive Slides">Ver Slides Interativos</span>
+                                        </a>
+                                        <a href="https://github.com/OPedroZampier/Steam-Analysis" target="_blank" class="btn btn-outline-custom py-2 px-3 rounded text-uppercase font-monospace fw-bold" style="font-size: 0.82rem; border-color: rgba(34, 211, 238, 0.3); color: var(--cyan);">
+                                            <i class="fa-brands fa-github me-2"></i> <span data-pt="Código no GitHub" data-en="GitHub Code">Código no GitHub</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <a href="https://github.com/OPedroZampier/entrega-1-intro-Ciencia_de_dados" target="_blank" class="btn-project">
-                            Ver no GitHub <i class="fa-solid fa-arrow-right"></i>
-                        </a>
                     </div>
                 </div>
                 <!-- Projeto 2 -->
-                <div class="col-lg-6 d-flex">
+                <div class="col-lg-6 col-md-6 d-flex">
                     <div class="glass project-card w-100">
                         <span class="project-number">02</span>
-                        <h3>Limpeza, Transformação e Agrupamento de Dados</h3>
-                        <p class="desc">
-                            Pipeline completo de tratamento de dados (ETL básico) em 16 etapas usando dataset <code style="color:var(--emerald);background:var(--emerald-dim);padding:2px 6px;border-radius:4px;font-size:.85rem;">.parquet</code>. Envolve filtragem geo-financeira, deduplicação, imputação de dados, engenharia de features e persistência em JSON.
+                        <h3 data-pt="Análise Exploratória: Emendas e Transparência" data-en="Exploratory Analysis: Public Budget & Transparency">Análise Exploratória: Emendas e Transparência</h3>
+                        <p class="desc" data-pt="Limpeza e estruturação de bases governamentais complexas focadas em emendas públicas. Identificação de padrões, busca de anomalias e comunicação de resultados estratégicos através de storytelling." data-en="Cleaning and structuring complex government databases focused on public budget amendments. Pattern identification, anomaly search, and communication of strategic results through storytelling.">
+                            Limpeza e estruturação de bases governamentais complexas focadas em emendas públicas. Identificação de padrões, busca de anomalias e comunicação de resultados estratégicos através de storytelling.
+                        </p>
+                        <div class="tech-used">
+                            <span>Python</span>
+                            <span data-pt="EDA" data-en="EDA">EDA</span>
+                            <span data-pt="Storytelling" data-en="Storytelling">Storytelling</span>
+                        </div>
+                        <a href="https://github.com/OPedroZampier/entrega-1-intro-Ciencia_de_dados" target="_blank" class="btn-project">
+                            <span data-pt="Ver no GitHub" data-en="View on GitHub">Ver no GitHub</span> <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Projeto 3 -->
+                <div class="col-lg-6 col-md-6 d-flex">
+                    <div class="glass project-card w-100">
+                        <span class="project-number">03</span>
+                        <h3 data-pt="Limpeza, Transformação e Agrupamento (ETL)" data-en="Data Cleaning, Transformation & Grouping (ETL)">Limpeza, Transformação e Agrupamento (ETL)</h3>
+                        <p class="desc" data-pt="Pipeline prático de tratamento de dados em 16 etapas com dataset <code style='color:var(--emerald);background:var(--emerald-dim);padding:2px 6px;border-radius:4px;font-size:.85rem;'>.parquet</code>. Filtragem, imputação de dados, engenharia de features e persistência em JSON." data-en="Practical data treatment pipeline in 16 steps using a <code style='color:var(--emerald);background:var(--emerald-dim);padding:2px 6px;border-radius:4px;font-size:.85rem;'>.parquet</code> dataset. Filtering, data imputation, feature engineering, and JSON persistence.">
+                            Pipeline prático de tratamento de dados em 16 etapas com dataset <code style="color:var(--emerald);background:var(--emerald-dim);padding:2px 6px;border-radius:4px;font-size:.85rem;">.parquet</code>. Filtragem, imputação de dados, engenharia de features e persistência em JSON.
                         </p>
                         <div class="tech-used">
                             <span>Python</span>
                             <span>Pandas</span>
-                            <span>PyArrow</span>
-                            <span>FastParquet</span>
+                            <span>Parquet</span>
                         </div>
                         <a href="https://github.com/OPedroZampier/pandas_intro_ex2.ipynb" target="_blank" class="btn-project">
-                            Ver no GitHub <i class="fa-solid fa-arrow-right"></i>
+                            <span data-pt="Ver no GitHub" data-en="View on GitHub">Ver no GitHub</span> <i class="fa-solid fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
@@ -421,8 +492,8 @@
     <!-- CERTIFICAÇÕES -->
     <section id="certificacoes">
         <div class="container">
-            <p class="section-label">// certificações</p>
-            <h2 class="section-heading">Certificados & Qualificações</h2>
+            <p class="section-label" data-pt="// certificações" data-en="// certifications">// certificações</p>
+            <h2 class="section-heading" data-pt="Certificados & Qualificações" data-en="Certificates & Qualifications">Certificados & Qualificações</h2>
             <div class="divider"></div>
             <div class="row g-4">
                 <!-- Cert 1 - EF SET -->
@@ -434,16 +505,16 @@
                             <span style="color:var(--emerald);">EF SET</span>
                         </div>
                         <h4>English C2 Proficient</h4>
-                        <p class="cert-desc">
+                        <p class="cert-desc" data-pt="Certificação internacional de proficiência em inglês nível C2 (Proficient), o nível mais alto na escala CEFR. Score: <strong style='color:var(--cyan);'>85/100</strong>." data-en="International English proficiency certification at C2 level (Proficient), the highest level on the CEFR scale. Score: <strong style='color:var(--cyan);'>85/100</strong>.">
                             Certificação internacional de proficiência em inglês nível C2 (Proficient), o nível mais alto na escala CEFR. Score: <strong style="color:var(--cyan);">85/100</strong>.
                         </p>
                         <div class="cert-tags">
-                            <span>English</span>
+                            <span data-pt="Inglês" data-en="English">English</span>
                             <span>C2 Proficient</span>
                             <span>CEFR</span>
                         </div>
                         <a href="https://cert.efset.org/iBvCmQ" target="_blank" class="btn-cert">
-                            Ver Certificado <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            <span data-pt="Ver Certificado" data-en="View Certificate">Ver Certificado</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </a>
                     </div>
                 </div>
@@ -455,17 +526,17 @@
                             <span class="cert-provider-dot alura"></span>
                             <span style="color:#4ca6ff;">Alura</span>
                         </div>
-                        <h4>Python para Dados: Primeiros Passos</h4>
-                        <p class="cert-desc">
+                        <h4 data-pt="Python para Dados: Primeiros Passos" data-en="Python for Data: First Steps">Python para Dados: Primeiros Passos</h4>
+                        <p class="cert-desc" data-pt="Fundamentos de Python aplicados à Ciência de Dados &mdash; tipos de dados, estruturas básicas e introdução à manipulação de dados." data-en="Python fundamentals applied to Data Science &mdash; data types, basic structures, and introduction to data manipulation.">
                             Fundamentos de Python aplicados à Ciência de Dados — tipos de dados, estruturas básicas e introdução à manipulação de dados.
                         </p>
                         <div class="cert-tags">
                             <span>Python</span>
                             <span>Data Science</span>
-                            <span>Fundamentos</span>
+                            <span data-pt="Fundamentos" data-en="Fundamentals">Fundamentos</span>
                         </div>
                         <a href="https://cursos.alura.com.br/certificate/pedroperry0/python-data-science-primeiros-passos" target="_blank" class="btn-cert">
-                            Ver Certificado <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            <span data-pt="Ver Certificado" data-en="View Certificate">Ver Certificado</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </a>
                     </div>
                 </div>
@@ -477,17 +548,17 @@
                             <span class="cert-provider-dot alura"></span>
                             <span style="color:#4ca6ff;">Alura</span>
                         </div>
-                        <h4>Python para Dados: Funções, Estruturas de Dados e Exceções</h4>
-                        <p class="cert-desc">
+                        <h4 data-pt="Python para Dados: Funções, Estruturas de Dados e Exceções" data-en="Python for Data: Functions, Data Structures and Exceptions">Python para Dados: Funções, Estruturas de Dados e Exceções</h4>
+                        <p class="cert-desc" data-pt="Aprofundamento em Python com funções avançadas, estruturas de dados complexas e tratamento de exceções aplicados à análise de dados." data-en="Deep dive into Python with advanced functions, complex data structures, and exception handling applied to data analysis.">
                             Aprofundamento em Python com funções avançadas, estruturas de dados complexas e tratamento de exceções aplicados à análise de dados.
                         </p>
                         <div class="cert-tags">
                             <span>Python</span>
-                            <span>Funções</span>
-                            <span>Estruturas de Dados</span>
+                            <span data-pt="Funções" data-en="Functions">Funções</span>
+                            <span data-pt="Estruturas de Dados" data-en="Data Structures">Estruturas de Dados</span>
                         </div>
                         <a href="https://cursos.alura.com.br/certificate/912dacf7-3162-4a37-b86d-384dac134e72?lang=pt_BR" target="_blank" class="btn-cert">
-                            Ver Certificado <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            <span data-pt="Ver Certificado" data-en="View Certificate">Ver Certificado</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </a>
                     </div>
                 </div>
@@ -499,17 +570,17 @@
                             <span class="cert-provider-dot alura"></span>
                             <span style="color:#4ca6ff;">Alura</span>
                         </div>
-                        <h4>Matemática para Data Science: Construindo a Base</h4>
-                        <p class="cert-desc">
+                        <h4 data-pt="Matemática para Data Science: Construindo a Base" data-en="Mathematics for Data Science: Building the Base">Matemática para Data Science: Construindo a Base</h4>
+                        <p class="cert-desc" data-pt="Fundamentos matemáticos essenciais para Ciência de Dados &mdash; álgebra, estatística descritiva e conceitos analíticos aplicados." data-en="Essential mathematical foundations for Data Science &mdash; algebra, descriptive statistics, and applied analytical concepts.">
                             Fundamentos matemáticos essenciais para Ciência de Dados — álgebra, estatística descritiva e conceitos analíticos aplicados.
                         </p>
                         <div class="cert-tags">
-                            <span>Matemática</span>
-                            <span>Estatística</span>
+                            <span data-pt="Matemática" data-en="Mathematics">Matemática</span>
+                            <span data-pt="Estatística" data-en="Statistics">Estatística</span>
                             <span>Data Science</span>
                         </div>
                         <a href="https://cursos.alura.com.br/certificate/pedroperry0/matematica-data-science-construindo-base" target="_blank" class="btn-cert">
-                            Ver Certificado <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            <span data-pt="Ver Certificado" data-en="View Certificate">Ver Certificado</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         </a>
                     </div>
                 </div>
@@ -523,9 +594,9 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-center">
-                    <p class="section-label">// recomendação</p>
+                    <p class="section-label" data-pt="// recomendação" data-en="// recommendation">// recomendação</p>
                     <div class="quote-mark">&ldquo;</div>
-                    <p class="testimonial-text">
+                    <p class="testimonial-text" data-pt="Apesar de o Pedro estar no primeiro semestre, vejo um grande potencial e uma proatividade que o coloca acima da média. Ele demonstra uma base sólida e uma capacidade impressionante de aplicar o conhecimento em projetos reais." data-en="Although Pedro is in his first semester, I see great potential and a proactivity that puts him above average. He demonstrates a solid foundation and an impressive ability to apply knowledge to real-world projects.">
                         Apesar de o Pedro estar no primeiro semestre, vejo um grande potencial e uma proatividade que o coloca acima da média. Ele demonstra uma base sólida e uma capacidade impressionante de aplicar o conhecimento em projetos reais.
                     </p>
                     <div class="testimonial-author">
@@ -539,20 +610,37 @@
     <!-- CONTATO / FOOTER -->
     <footer id="contato">
         <div class="container">
-            <p class="section-label">// contato</p>
-            <h2 class="footer-heading">Vamos trabalhar juntos?</h2>
-            <p class="footer-sub">Aberto a oportunidades, estágios e projetos colaborativos.</p>
+            <p class="section-label" data-pt="// contato" data-en="// contact">// contato</p>
+            <h2 class="footer-heading" data-pt="Vamos trabalhar juntos?" data-en="Let's work together?">Vamos trabalhar juntos?</h2>
+            <p class="footer-sub" data-pt="Aberto a oportunidades, estágios e projetos colaborativos." data-en="Open to opportunities, internships, and collaborative projects.">Aberto a oportunidades, estágios e projetos colaborativos.</p>
             <div class="social-row">
                 <a href="mailto:pedroperry0@gmail.com" class="social-btn" title="E-mail"><i class="fa-solid fa-envelope"></i></a>
                 <a href="https://br.linkedin.com/in/pedro-lima-zampier-de-andrade-a8a6513b4" target="_blank" class="social-btn" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                 <a href="https://github.com/OPedroZampier" target="_blank" class="social-btn" title="GitHub"><i class="fa-brands fa-github"></i></a>
             </div>
-            <p class="footer-copy">&copy; 2026 Pedro Lima Zampier de Andrade &middot; Feito com <i class="fa-solid fa-heart" style="color:var(--cyan);"></i> e dados.</p>
+            <p class="footer-copy" data-pt="&copy; 2026 Pedro Lima Zampier de Andrade &middot; Feito com <i class='fa-solid fa-heart' style='color:var(--cyan);'></i> e dados." data-en="&copy; 2026 Pedro Lima Zampier de Andrade &middot; Made with <i class='fa-solid fa-heart' style='color:var(--cyan);'></i> and data.">&copy; 2026 Pedro Lima Zampier de Andrade &middot; Feito com <i class="fa-solid fa-heart" style="color:var(--cyan);"></i> e dados.</p>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+        // Language state
+        let currentLang = 'pt';
+
+        // Typing animation phrases
+        const phrasesMap = {
+            pt: [
+                'Cientista de Dados',
+                'Python & Pandas',
+                'Especialista em Data Storytelling'
+            ],
+            en: [
+                'Data Scientist',
+                'Python & Pandas',
+                'Data Storytelling Specialist'
+            ]
+        };
+
         // Fecha menu mobile ao clicar
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', () => {
@@ -562,28 +650,75 @@
         });
 
         // Typing animation
-        const phrases = [
-            'Cientista de Dados',
-            'Python & Pandas',
-            'Especialista em Data Storytelling'
-        ];
         const el = document.getElementById('typed-output');
         let phraseIdx = 0, charIdx = 0, deleting = false;
+        let typingTimeout;
+
         function typeLoop() {
-            const current = phrases[phraseIdx];
+            const currentPhrases = phrasesMap[currentLang];
+            const current = currentPhrases[phraseIdx];
             if (!deleting) {
                 el.textContent = current.substring(0, charIdx + 1);
                 charIdx++;
-                if (charIdx === current.length) { deleting = true; setTimeout(typeLoop, 2000); return; }
-                setTimeout(typeLoop, 70);
+                if (charIdx === current.length) { 
+                    deleting = true; 
+                    typingTimeout = setTimeout(typeLoop, 2000); 
+                    return; 
+                }
+                typingTimeout = setTimeout(typeLoop, 70);
             } else {
                 el.textContent = current.substring(0, charIdx - 1);
                 charIdx--;
-                if (charIdx === 0) { deleting = false; phraseIdx = (phraseIdx + 1) % phrases.length; setTimeout(typeLoop, 400); return; }
-                setTimeout(typeLoop, 35);
+                if (charIdx === 0) { 
+                    deleting = false; 
+                    phraseIdx = (phraseIdx + 1) % currentPhrases.length; 
+                    typingTimeout = setTimeout(typeLoop, 400); 
+                    return; 
+                }
+                typingTimeout = setTimeout(typeLoop, 35);
             }
         }
-        typeLoop();
+
+        // Language Switcher function
+        function setLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('preferredLang', lang);
+            document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+            
+            // Translate all elements with data attributes
+            document.querySelectorAll('[data-pt]').forEach(el => {
+                const text = el.getAttribute('data-' + lang);
+                if (text) {
+                    el.innerHTML = text;
+                }
+            });
+
+            // Update page description and title
+            document.querySelector('meta[name="description"]')?.setAttribute('content', lang === 'pt' ? 'Portfólio de Pedro Lima Zampier de Andrade — Cientista de Dados em formação, especialista em Python, Pandas e Data Storytelling.' : 'Portfolio of Pedro Lima Zampier de Andrade — Data Scientist in training, specializing in Python, Pandas, and Data Storytelling.');
+            document.title = lang === 'pt' ? 'Pedro Zampier | Cientista de Dados' : 'Pedro Zampier | Data Scientist';
+            
+            // Update button text to display the toggle action target
+            const btn = document.getElementById('langToggleBtn');
+            if (btn) {
+                btn.textContent = lang === 'pt' ? 'EN' : 'PT';
+            }
+            
+            // Reset typing animation
+            clearTimeout(typingTimeout);
+            phraseIdx = 0;
+            charIdx = 0;
+            deleting = false;
+            if (el) el.textContent = '';
+            typeLoop();
+        }
+
+        // Add event listener to language button
+        document.getElementById('langToggleBtn').addEventListener('click', () => {
+            setLanguage(currentLang === 'pt' ? 'en' : 'pt');
+        });
+
+        // Initialize language - Portuguese is always the default on load
+        setLanguage('pt');
     </script>
 </body>
 </html>

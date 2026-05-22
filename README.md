@@ -25,6 +25,7 @@ Este site atua como uma **vitrine profissional** para apresentar minha trajetór
 Como um profissional com foco em **Data Storytelling** e forte perfil analítico, o portfólio foi desenhado com um visual **Dark Mode** inspirado em ferramentas de dados — limpo, direto e focado em resultados técnicos.
 
 ### ✨ Destaques do Design
+- **Suporte Multilíngue (PT/EN)** — Alternador de idiomas dinâmico com persistência de preferências
 - **Dark Theme** com contrastes em ciano e verde esmeralda
 - **Glassmorphism** (efeito de vidro translúcido) nos cards
 - **Animação de digitação** (typing effect) no subtítulo do Hero
@@ -42,7 +43,7 @@ Como um profissional com foco em **Data Storytelling** e forte perfil analítico
 | **Bootstrap 5** | Grid responsivo, navbar e componentes (via CDN) |
 | **Font Awesome 6** | Biblioteca de ícones (via CDN) |
 | **Google Fonts** | Tipografia moderna (Inter + JetBrains Mono) |
-| **JavaScript** | Typing animation e interação do menu mobile |
+| **JavaScript** | Tradução dinâmica, typing animation e menu mobile |
 | **GitHub Pages** | Hospedagem e deploy contínuo |
 
 ---
@@ -53,8 +54,9 @@ Através deste portfólio, você terá acesso aos meus repositórios de dados re
 
 | # | Projeto | Descrição |
 |---|---|---|
-| 01 | **[EDA — Emendas e Transparência Pública](https://github.com/OPedroZampier/entrega-1-intro-Ciencia_de_dados)** | Limpeza, tratamento e storytelling aplicado a dados governamentais complexos. |
-| 02 | **[ETL, Limpeza e Agrupamento de Dados](https://github.com/OPedroZampier/pandas_intro_ex2.ipynb)** | Pipeline completo de transformação em 16 etapas com Python, Pandas e arquivos Parquet/JSON. |
+| 01 | **[Análise Exploratória: Steam Games Dataset](https://github.com/OPedroZampier/Steam-Analysis)** | Investigação de padrões sobre preço, popularidade, avaliações, gêneros e qualidade de jogos na Steam, com slides interativos inclusos. |
+| 02 | **[EDA — Emendas e Transparência Pública](https://github.com/OPedroZampier/entrega-1-intro-Ciencia_de_dados)** | Limpeza, tratamento e storytelling aplicado a dados governamentais complexos. |
+| 03 | **[ETL, Limpeza e Agrupamento de Dados](https://github.com/OPedroZampier/pandas_intro_ex2.ipynb)** | Pipeline completo de transformação em 16 etapas com Python, Pandas e arquivos Parquet/JSON. |
 
 ---
 
@@ -64,6 +66,7 @@ Através deste portfólio, você terá acesso aos meus repositórios de dados re
 pedroz.github.io/
 ├── index.html                                          # Site do portfólio (HTML + CSS + JS)
 ├── README.md                                           # Este arquivo
+├── .gitignore                                          # Configuração de arquivos ignorados pelo Git
 ├── certificados/
 │   ├── Alura-Python-Fun-EST-EXC.mhtml                  # 🏅 Certificado Alura — Python: Funções, Estruturas e Exceções
 │   ├── Alura-Python-dados.mhtml                        # 🏅 Certificado Alura — Python para Dados
@@ -72,7 +75,8 @@ pedroz.github.io/
 ├── curriculo/
 │   └── curriculo.md                                    # 📄 Currículo profissional completo
 └── Slide/
-    └── Do Dado Bruto à Decisão Estratégica.pptx        # 🎤 Apresentação/Slide do Bootcamp
+    ├── steam-eda.html                                  # 📊 Apresentação interativa de slides (Steam Games)
+    └── Do Dado Bruto à Decisão Estratégica.pptx        # 🎤 Apresentação/Slide do Bootcamp de Dados
 ```
 
 ---
