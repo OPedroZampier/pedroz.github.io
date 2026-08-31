@@ -1,97 +1,71 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Status-Live%20🟢-22d3ee?style=for-the-badge&labelColor=0a0e1a" alt="Status">
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
-  <img src="https://img.shields.io/badge/Bootstrap_5-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap 5">
-  <img src="https://img.shields.io/badge/GitHub_Pages-222?style=for-the-badge&logo=githubpages&logoColor=white" alt="GitHub Pages">
-</p>
-
-# 🚀 Portfólio Profissional — Pedro Zampier
-
-Bem-vindo ao repositório do meu portfólio web! Este projeto foi desenvolvido como parte da **Entrega Intermediária (Bootcamp 1)** do curso de **Ciência de Dados do UniCEUB**.
-
-<p align="center">
   <a href="https://opedrozampier.github.io/pedroz.github.io/">
-    <img src="https://img.shields.io/badge/🔗_ACESSAR_SITE_AO_VIVO-22d3ee?style=for-the-badge&labelColor=0a0e1a" alt="Acessar Site">
+    <img src="https://img.shields.io/badge/VIEW_LIVE_PORTFOLIO-111111?style=for-the-badge&logo=githubpages&logoColor=white" alt="View live portfolio">
   </a>
 </p>
 
----
+# Public Data & Data Science Portfolio
 
-## 🎯 Sobre o Projeto
+A focused portfolio of analytical systems that turn official datasets into clear, documented and decision-ready evidence.
 
-Este site atua como uma **vitrine profissional** para apresentar minha trajetória, minhas habilidades técnicas e comportamentais, e, principalmente, meus **projetos práticos na área de Dados**.
+The website presents selected work across **Power BI, Python, public data, ETL and data storytelling**. English is the default language, with a complete Portuguese version available through the language switcher.
 
-Como um profissional com foco em **Data Storytelling** e forte perfil analítico, o portfólio foi desenhado com um visual **Dark Mode** inspirado em ferramentas de dados — limpo, direto e focado em resultados técnicos.
+## Featured project — Brazil Elections 2026
 
-### ✨ Destaques do Design
-- **Suporte Multilíngue (PT/EN)** — Alternador de idiomas dinâmico com persistência de preferências
-- **Dark Theme** com contrastes em ciano e verde esmeralda
-- **Glassmorphism** (efeito de vidro translúcido) nos cards
-- **Animação de digitação** (typing effect) no subtítulo do Hero
-- **Totalmente responsivo** — funciona em desktop, tablet e celular
-- **Single Page** — navegação fluida por âncoras
+> One of the earliest publicly documented Power BI projects integrating TSE open data to analyze Brazil's 2026 elections.
 
----
+[Brazil Elections 2026](https://github.com/OPedroZampier/brazil-elections-2026-powerbi) connects official electoral datasets in a single analytical model covering candidacies, electorate, declared assets, political parties and campaign finance.
 
-## 🛠️ Tecnologias Utilizadas
+The report currently includes six analytical views and is designed to evolve as new releases become available from Brazil's Superior Electoral Court (`TSE`). Its methodology, transformations, assumptions and limitations are documented in both English and Portuguese.
 
-| Tecnologia | Uso |
-|---|---|
-| **HTML5** | Estruturação semântica de todo o conteúdo |
-| **CSS3** | Estilização customizada, animações e variáveis CSS |
-| **Bootstrap 5** | Grid responsivo, navbar e componentes (via CDN) |
-| **Font Awesome 6** | Biblioteca de ícones (via CDN) |
-| **Google Fonts** | Tipografia moderna (Inter + JetBrains Mono) |
-| **JavaScript** | Tradução dinâmica, typing animation e menu mobile |
-| **GitHub Pages** | Hospedagem e deploy contínuo |
+<p align="center">
+  <img src="https://raw.githubusercontent.com/OPedroZampier/brazil-elections-2026-powerbi/main/assets/screenshots/01-national-overview.png" alt="Brazil Elections 2026 Power BI national overview" width="850">
+</p>
 
----
+**Project stack:** Power BI · Power Query · DAX · Python · pandas · TSE Open Data
 
-## 📊 Projetos de Dados em Destaque
+## Other selected work
 
-Através deste portfólio, você terá acesso aos meus repositórios de dados reais:
-
-| # | Projeto | Descrição |
+| Project | Focus | Stack |
 |---|---|---|
-| 01 | **[Análise Exploratória: Steam Games Dataset](https://github.com/OPedroZampier/Steam-Analysis)** | Investigação de padrões sobre preço, popularidade, avaliações, gêneros e qualidade de jogos na Steam, com slides interativos inclusos. |
-| 02 | **[EDA — Emendas e Transparência Pública](https://github.com/OPedroZampier/entrega-1-intro-Ciencia_de_dados)** | Limpeza, tratamento e storytelling aplicado a dados governamentais complexos. |
-| 03 | **[ETL, Limpeza e Agrupamento de Dados](https://github.com/OPedroZampier/pandas_intro_ex2.ipynb)** | Pipeline completo de transformação em 16 etapas com Python, Pandas e arquivos Parquet/JSON. |
+| [Steam Games Analysis](https://github.com/OPedroZampier/Steam-Analysis) | Price, popularity, reviews, genres and quality translated into an interactive data story | Python, pandas, Seaborn, EDA |
+| [Budget & Public Transparency](https://github.com/OPedroZampier/entrega-1-intro-Ciencia_de_dados) | Government data cleaned and structured to surface patterns and anomalies | Python, public data, EDA |
+| [Data Transformation Pipeline](https://github.com/OPedroZampier/pandas_intro_ex2.ipynb) | A 16-step workflow covering filtering, imputation, feature engineering and persistence | pandas, Parquet, JSON, ETL |
 
----
+## Portfolio highlights
 
-## 🏗️ Estrutura do Repositório
+- English-first bilingual interface (`EN` / `PT`)
+- Expandable professional profile card
+- Responsive editorial layout for desktop and mobile
+- Animated Sisyphus data-pipeline easter egg
+- Direct access to repositories, documentation and the Power BI report
+- Accessibility support, reduced-motion behavior and keyboard navigation
 
-```
-pedroz.github.io/
-├── index.html                                          # Site do portfólio (HTML + CSS + JS)
-├── README.md                                           # Este arquivo
-├── .gitignore                                          # Configuração de arquivos ignorados pelo Git
-├── certificados/
-│   ├── Alura-Python-Fun-EST-EXC.mhtml                  # 🏅 Certificado Alura — Python: Funções, Estruturas e Exceções
-│   ├── Alura-Python-dados.mhtml                        # 🏅 Certificado Alura — Python para Dados
-│   ├── Alura-matematica.mhtml                          # 🏅 Certificado Alura — Matemática
-│   └── EF SET Certificate.pdf                          # 🏅 Certificação EF SET — Inglês C2 (85/100)
-├── curriculo/
-│   └── curriculo.md                                    # 📄 Currículo profissional completo
-└── Slide/
-    ├── steam-eda.html                                  # 📊 Apresentação interativa de slides (Steam Games)
-    └── Do Dado Bruto à Decisão Estratégica.pptx        # 🎤 Apresentação/Slide do Bootcamp de Dados
-```
+## Built with
 
----
+`React 19` · `TypeScript` · `Motion` · `Tailwind CSS` · `Vite` · `GitHub Pages`
 
-## 👨‍💻 Autor
+The production bundle is committed as a static site so GitHub Pages can serve it directly. Existing certificates, curriculum materials and interactive Steam presentation remain available in their original directories.
 
-**Pedro Lima Zampier de Andrade**
-*Cientista de Dados em formação | Python & Pandas | Data Storytelling*
+## Profile
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://br.linkedin.com/in/pedro-lima-zampier-de-andrade-a8a6513b4)
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/OPedroZampier)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:pedroperry0@gmail.com)
+Data Science undergraduate at **UniCEUB** in Brasília, working across Python, business intelligence, public data and analytical communication.
+
+- Brazilian and European Union citizen
+- Italian passport — eligible to live and work across the EU
+- English C2 Proficient — EF SET 85/100
+- Open to internships, junior data roles and serious collaborative projects
+
+## Links
+
+- [Live portfolio](https://opedrozampier.github.io/pedroz.github.io/)
+- [Featured Power BI repository](https://github.com/OPedroZampier/brazil-elections-2026-powerbi)
+- [LinkedIn](https://br.linkedin.com/in/pedro-lima-zampier-de-andrade-a8a6513b4)
+- [GitHub profile](https://github.com/OPedroZampier)
+- [Email](mailto:pedroperry0@gmail.com)
 
 ---
 
 <p align="center">
-  <sub>Feito com 💙 e dados — UniCEUB, 2026</sub>
+  <sub>Pedro Lima Zampier de Andrade · Data Science · Brasília, Brazil / European Union</sub>
 </p>
