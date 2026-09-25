@@ -28,6 +28,7 @@ The report currently includes six analytical views and is designed to evolve as 
 
 | Project | Focus | Stack |
 |---|---|---|
+| [TSE 2026 Open Data ELT Pipeline](https://github.com/OPedroZampier/tse-2026-elt) · [Kaggle dataset](https://www.kaggle.com/datasets/pedrozampier/brazil-elections-2026-clean-tse-data) · [Notebook](https://www.kaggle.com/code/pedrozampier/brazil-elections-2026-exploring-tse-open-data) | Automated ingestion, transformation and data-quality checks across Brazil's 2026 TSE open-data catalog | Python, DuckDB, dbt, Great Expectations, GitHub Actions, CI/CD |
 | [Steam Games Analysis](https://github.com/OPedroZampier/Steam-Analysis) | Price, popularity, reviews, genres and quality translated into an interactive data story | Python, pandas, Seaborn, EDA |
 | [Budget & Public Transparency](https://github.com/OPedroZampier/entrega-1-intro-Ciencia_de_dados) | Government data cleaned and structured to surface patterns and anomalies | Python, public data, EDA |
 | [Data Transformation Pipeline](https://github.com/OPedroZampier/pandas_intro_ex2.ipynb) | A 16-step workflow covering filtering, imputation, feature engineering and persistence | pandas, Parquet, JSON, ETL |
